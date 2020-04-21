@@ -1,19 +1,32 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "embbeded-view": {
+    "embedded-view": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "flat": true,
+          "inlineTemplate": true,
+          "inlineStyle": true,
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        }
+      },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "app",
+      "prefix": "yb",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/embbeded-view",
+            "outputPath": "dist/embedded-view",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -24,7 +37,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": []
           },
@@ -62,18 +76,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "embbeded-view:build"
+            "browserTarget": "embedded-view:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "embbeded-view:build:production"
+              "browserTarget": "embedded-view:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "embbeded-view:build"
+            "browserTarget": "embedded-view:build"
           }
         },
         "test": {
@@ -110,15 +124,19 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "embbeded-view:serve"
+            "devServerTarget": "embedded-view:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "embbeded-view:serve:production"
+              "devServerTarget": "embedded-view:serve:production"
             }
           }
         }
       }
-    }},
-  "defaultProject": "embbeded-view"
+    }
+  },
+  "defaultProject": "embedded-view",
+  "cli": {
+    "analytics": false
+  }
 }
