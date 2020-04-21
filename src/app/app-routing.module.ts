@@ -1,22 +1,22 @@
-import { SecChildComponent } from './sec-child.component';
-import { ChildComponent } from './child.component';
+import { ProjectsComponent } from './pages/projects.component';
+import { HomeComponent } from './pages/home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { TemlatesComponent } from './portal/temlates.component';
+import { ProfileComponent } from './pages/profile.component';
 
 
 const routes: Routes = [{
-  path: 'child', 
-  component: ChildComponent
+  path: 'home', 
+  component: HomeComponent
 },
 {
-  path: 'sec-child', 
-  component: SecChildComponent
+  path: 'projects', 
+  component: ProjectsComponent
 },
 
 {
-    path: 'templates', 
-    component: TemlatesComponent
+    path: 'profile', 
+    component: ProfileComponent
 }
 
 ];

@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'yb-child',
+  selector: 'yb-projects',
   template: `
-   <h2> child component</h2>
-
-
+  <h2 class="mt-3">
+  Projects Page
+</h2>
   `,
   styles: []
 })
-export class ChildComponent implements OnInit {
+export class ProjectsComponent implements OnInit {
 
   constructor() { }
 

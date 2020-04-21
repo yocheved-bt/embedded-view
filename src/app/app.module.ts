@@ -3,22 +3,26 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ChildComponent } from './child.component';
-import { AddViewDirective } from './add-view.directive';
-import { SecChildComponent } from './sec-child.component';
 import { AttachDirective } from './portal/attach.directive';
 import { TargetDirective } from './portal/target.directive';
-import { TemlatesComponent } from './portal/temlates.component';
+import { FooterComponent } from './layouts/footer.component';
+import { HeaderComponent } from './layouts/header.component';
+import { SidenavComponent } from './layouts/sidenav.component';
+import { HomeComponent } from './pages/home.component';
+import { ProjectsComponent } from './pages/projects.component';
+import { ProfileComponent } from './pages/profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ChildComponent,
-    AddViewDirective,
-    SecChildComponent,
     AttachDirective,
     TargetDirective,
-    TemlatesComponent
+    FooterComponent,
+    HeaderComponent,
+    SidenavComponent,
+    HomeComponent,
+    ProjectsComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
